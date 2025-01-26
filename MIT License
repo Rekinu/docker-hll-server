@@ -1,0 +1,13 @@
+
+---
+
+### **Steps to Create the Repository on GitHub**
+
+1. **Create a New Repository**:
+   - Go to [GitHub](https://github.com/) and click on **New Repository**.
+   - Name the repository `hell-let-loose-dedicated-server`.
+
+2. **Clone the Repository**:
+   ```bash
+   git clone https://github.com/Rekinu/docker-hll-server/tree/main
+   cd hell-let-loose-dedicated-server
