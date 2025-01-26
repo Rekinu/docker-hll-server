@@ -4,12 +4,23 @@ services:
     container_name: hellletloose_server
     ports:
       - "7787:7787/udp"   # Game Port
-      - "27016:27016/udp" # Query Port
-      - "8080:8080"       # Web RCON Port (optional)
-    volumes:
-      - ./data:/home/steam/hell-let-loose
+      - "27015:27015/udp" # Query Port
+      - "8080:8080"       # Web RCON Port
     environment:
-      - HLL_SERVER_NAME=D1PLAY.GG
-      - HLL_ADMIN_PASSWORD=
+      - STEAM_USER=YourSteamUsername
+      - STEAM_PASSWORD=YourSteamPassword
+      - STEAM_APPID=960220
+      - STEAM_BRANCH=public
+      - STEAM_BRANCH_PASSWORD=
+      - HLL_SERVER_NAME=D1PLAY.GG Hell Let Loose Server
+      - HLL_SERVER_PASSWORD=
+      - HLL_ADMIN_PASSWORD=YourAdminPassword
       - HLL_MAX_PLAYERS=100
+      - HLL_GAME_PORT=7787
+      - HLL_QUERY_PORT=27015
+      - HLL_RCON_PORT=8080
+    volumes:
+      - ./steamcmd:/steamcmd                  # Persistent SteamCMD data
+      - ./config:/hellletloose/config         # Game server configurations
+      - ./logs:/hellletloose/logs             # Game server logs
     restart: unless-stopped
