@@ -1,0 +1,16 @@
+version: "3.8"
+services:
+  hellletloose:
+    build: .
+    container_name: hellletloose_server
+    ports:
+      - "7787:7787/udp"   # Game Port
+      - "27016:27016/udp" # Query Port
+      - "8080:8080"       # Web RCON Port (optional)
+    volumes:
+      - ./data:/home/steam/hell-let-loose
+    environment:
+      - HLL_SERVER_NAME=D1PLAY.GG
+      - HLL_ADMIN_PASSWORD=
+      - HLL_MAX_PLAYERS=100
+    restart: unless-stopped
