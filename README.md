@@ -17,5 +17,5 @@ This repository provides a Docker setup for hosting a Hell Let Loose dedicated s
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/hell-let-loose-dedicated-server.git
+   git clone https://github.com/Rekinu/docker-hll-server
    cd hell-let-loose-dedicated-server
